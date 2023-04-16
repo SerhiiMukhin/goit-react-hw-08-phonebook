@@ -1,8 +1,8 @@
 import React from 'react';
 import css from './ContactForm.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from 'redux/contacts/operations';
 import { selectContacts } from 'redux/contacts/selectors';
+import { addContact } from 'redux/contacts/operations';
 
 export const ContactForm = () => {
   const dispatch = useDispatch();
@@ -16,7 +16,7 @@ export const ContactForm = () => {
     if (contacts.some(({ name: newName }) => newName === name)) {
       alert(`${name} is already in contacts!`);
     } else {
-      dispatch(addContact(name, number));
+      dispatch(addContact({ name, number }));
     }
     form.reset();
   };
