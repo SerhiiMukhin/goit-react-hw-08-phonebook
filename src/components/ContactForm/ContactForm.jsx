@@ -10,6 +10,7 @@ export const ContactForm = () => {
 
   const handleSubmit = event => {
     event.preventDefault();
+    console.log(contacts)
     const form = event.target;
     const name = form.elements.name.value.trim();
     const number = form.elements.number.value;
